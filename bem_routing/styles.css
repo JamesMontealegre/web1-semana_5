@@ -1,0 +1,104 @@
+/* ============================================================================
+   BEM (Block – Element – Modifier)
+   ----------------------------------------------------------------------------
+   ¿Qué es?
+   - Un sistema de nombrado y organización de CSS que separa responsabilidades.
+
+   ¿Cómo se define?
+   - Bloque (Block): componente independiente.        .bloque {}
+   - Elemento (Element): parte del bloque.            .bloque__elemento {}
+   - Modificador (Modifier): variación/estado.        .bloque--mod, .bloque__elemento--mod {}
+
+   Beneficios:
+   - Nombres predecibles y autoexplicativos.
+   - Bajo acoplamiento → menos colisiones de estilos.
+   - Escalable y mantenible en equipos grandes.
+   - Refactors más seguros, mejor reutilización.
+   ============================================================================ */
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body.site {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+/* ---- Bloque: layout ------------------------------------------------------ */
+.layout {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh 1fr 10vh; /* header 10%, main 80%, footer 10% */
+}
+.layout__header {
+  background: #e3f2fd;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+.layout__title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.layout__footer {
+  background: #fce4ec;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+.layout__footer-text {
+  margin: 0;
+}
+
+/* ---- Bloque: layout (main) ---------------------------------------------- */
+.layout__main {
+  display: grid;
+  grid-template-columns: 30% 70%; /* nav / contenido */
+  min-height: 0; /* evita overflow con grid */
+}
+
+/* ---- Bloque: nav --------------------------------------------------------- */
+.nav {
+  background: #f1f8e9;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: auto;
+}
+.nav__link {
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 6px;
+  border-radius: 6px;
+}
+.nav__link:hover,
+.nav__link--active {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* ---- Bloque: content ----------------------------------------------------- */
+.content {
+  background: #fffde7;
+  padding: 16px;
+  overflow: auto;
+  min-height: 0;
+}
+
+/* ---- Bloque: panel (cada vista) ----------------------------------------- */
+/* .panel {
+}
+.panel__title {
+  margin: 0 0 8px;
+}
+.panel__text {
+  margin: 0 0 12px;
+} */
+
+/* Ejemplo de modificador (no obligatorio aquí)
+   .panel--highlight { outline: 2px dashed #999; }
+   */

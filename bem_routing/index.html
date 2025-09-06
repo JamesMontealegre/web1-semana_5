@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>BEM + Router</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="site">
+  <div class="layout">
+    <header class="layout__header">
+      <h1 class="layout__title">Header</h1>
+    </header>
+
+    <main class="layout__main">
+      <nav id="app-nav" class="nav">
+        <a class="nav__link" href="#home">Home</a>
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#services">Services</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <section id="app-content" class="content" aria-live="polite">
+        <!-- Aquí se inyectan las vistas -->
+      </section>
+    </main>
+
+    <footer class="layout__footer">
+      <p class="layout__footer-text">Footer</p>
+    </footer>
+  </div>
+
+  <script src="router.js"></script>
+</body>
+
+</html>
